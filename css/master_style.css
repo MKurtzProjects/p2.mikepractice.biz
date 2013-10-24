@@ -1,0 +1,25 @@
+body {
+	font-family: Arial, sans-serif;
+	margin:0% 0%;
+	background-image:url('../images/noise.png')
+}
+
+#menu {
+	background-color: black;
+	color: white;
+	height: 50px;
+}
+
+#menu a
+{
+	width:60px;
+}
+
+#content {
+	background-color: white;
+	margin: 5%;
+	padding:2%;
+	border:2px solid;
+	border-radius:25px;
+	box-shadow: 10px 10px 5px #888888;
+}
