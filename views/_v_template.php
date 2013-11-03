@@ -16,42 +16,49 @@
 
 <body>  
 
-    <div id='menu'>
+    <div id='head'>
 
-        <a href='/'>Home</a>
+        <div id='menu'>
+            <a id="logo" href='/'> <img src="/images/share_stuff_logo.png" alt="Share Stuff"></a></p>
 
-        <!-- Menu for users who are logged in -->
-        <?php if($user): ?>
-            <a href='/users/logout'>Logout</a>
-            <a href='/users/profile'>Profile</a>
+            <!-- Menu for users who are logged in -->
+            <?php if($user): ?>
+                
+                <ul>
+                    <li><a href='/users/logout'>Logout</a></li>
+                    <li><a href='/users/profile'>Profile</a></li>
+                </ul>
 
-        <!-- Menu options for users who are not logged in -->
-        <?php else: ?>
-            <a href='/users/signup'>Sign up</a>
-            <a href='/users/login'>Log in</a>
-        <?php endif; ?>
+            <!-- Menu options for users who are not logged in -->
+            
+            <?php else: ?>
+                <ul>
+                    <li><a href='/users/signup'>Sign up</a></li>
+                    <li><a href='/index/index/'>Log in</a></li>
+                </ul>
+            <?php endif; ?>
+        </div> 
 
     </div>
 
-<div id="content">
+    <div id="container">
 
-    <br>
+    <div id="content">
 
-	<?php if(isset($content)) echo $content; ?>
+        <br>
 
-	<?php if(isset($client_files_body)) echo $client_files_body; ?>
+	   <?php if(isset($content)) echo $content; ?>
 
-</div>
+	   <?php if(isset($client_files_body)) echo $client_files_body; ?>
+    </div>
+
+    </div>
 
 </body>
 
 <footer>
-    <?php
 
-
-    echo Time::display(Time())." ET";
-
-    ?>
+<p>Created by Michael Kurtz.</p>
 
 </footer>
 </html>

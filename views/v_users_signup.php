@@ -1,4 +1,4 @@
-<form method='POST' action='/users/p_signup'>
+<form id="top" method='POST' action='/users/p_signup'>
 
     First Name<br>
     <input type='text' name='first_name'>
@@ -10,6 +10,11 @@
 
     Email<br>
     <input type='text' name='email'>
+    <br><br>
+
+    Biography<br>
+    <textarea type='text' name='biography' rows="4" cols="50">
+    </textarea>
     <br><br>
 
     Password<br>

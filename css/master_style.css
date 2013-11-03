@@ -1,25 +1,69 @@
 body {
 	font-family: Arial, sans-serif;
 	margin:0% 0%;
-	background-image:url('../images/noise.png')
+	background-color:#7F2F7E
+}
+
+#head {
+	background-color: black;
+}
+
+#top {
+	border:1px solid grey;
+	background-color:#FFF6FF;
+	margin:0% 3% 2% 3%;
+	padding: 1%;
+}
+
+#left {
+	border:1px solid grey;
+	width: 56%;
+	margin-left:3%;
+	padding: 1%;
+	background-color:#FFF6FF;
+}
+
+#right {
+	border:1px solid grey;
+	float:right;
+	clear:bottom;
+	width: 33%;
+	margin:0% 3%;
+	padding: 1%;
+	background-color:#FFF6FF;
+}
+
+footer {
+	clear:both;
+}
+
+#menu img {
+	float:left;
+}
+
+#menu li {
+	font-size: large;
+	width:70px;
+	float:right;
 }
 
 #menu {
-	background-color: black;
-	color: white;
-	height: 50px;
+	margin-top: 0px;
+	height:80px;
+	padding-top: 10px;
+	padding-bottom:0px;
 }
 
-#menu a
-{
-	width:60px;
+
+#container {
+	margin: 20px;
 }
 
-#content {
-	background-color: white;
-	margin: 5%;
-	padding:2%;
-	border:2px solid;
-	border-radius:25px;
-	box-shadow: 10px 10px 5px #888888;
+.error {
+	color:red;
+}
+
+#menu a:link {color:white;}
+#menu a:visited {color:white;}
+#menu a:hover {color:green;} 
 }

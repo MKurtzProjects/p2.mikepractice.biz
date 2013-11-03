@@ -5,10 +5,6 @@ class users_controller extends base_controller {
         parent::__construct();
     } 
 
-    public function index() {
-        echo "This is the index page";
-    }
-
     public function signup() {
 
         # Setup view
@@ -34,11 +30,27 @@ class users_controller extends base_controller {
         #Insert this user into the database
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
 
-         # For now, just confirm they've signed up - 
-        # I should eventually make a proper View for this
-        echo 'You\'re signed up';
+    # Set up the view
+    $this->template->content = View::instance("v_users_confirmation");
+
+    # Pass data to the view
+    $this->template->content->error = $error;
+
+    # Render the view
+    echo $this->template;
         
     }
+
+    public function p_profile() {
+
+    $data = Array("biography" => $_POST['biography']);
+    DB::instance(DB_NAME)->update("users", $data, "WHERE token = '".$this->user->token."'");
+
+    echo "Your profile has been updated. <a href='/users/profile'>View updated profile</a>";
+
+}
+
+
 
 /*
     public function login() {
@@ -100,6 +112,7 @@ class users_controller extends base_controller {
 
 }
 
+
  public function logout() {
 
     # Generate and save a new token for next login
@@ -135,7 +148,7 @@ class users_controller extends base_controller {
     #Set page title in the template
     $this->template->title = "Profile";
 
-        # Create an array of 1 or many client files to be included in the head
+    # Create an array of 1 or many client files to be included in the head
     $client_files_head = Array(
     	'/css/sample-app.css',
         );
