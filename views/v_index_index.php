@@ -19,9 +19,9 @@
 			<div id="right">
 
 				<ul id="action_list">
-					<li> <a href='/posts/add'>Add a new post</a> <br>Add posts for your followers to read.</li> <br>
-					<li> <a href='/posts/index'>View posts</a> <br>View a list of all posts by those you follow.</li> <br>
-					<li> <a href='/posts/users'>Follow users</a> <br>Follow new users to subscribe to their feed.</li> <br>
+					<li> <a href='/posts/add'>Add a new post</a> <br>Add posts for your followers to read.</li> 
+					<li> <a href='/posts/users'>Follow users</a> <br>Follow new users to subscribe to their feed.</li> 
+					<li> <a href='/posts/index'>View posts</a> <br>View a list of all posts by those you follow.</li> 
 				</ul>
 
 
@@ -29,6 +29,12 @@
 
 			<div id="left">
 				<h1> Welcome, <?php echo $user->first_name; ?>!</h1>
+				<p> So you've found Share Stuff.  Congratulations! </p>
+				<p> You'll find two +1 features on this site.  Those are: <p>
+					<ul>
+						<li> 1: An email confirmation after signup. If the email was mistakenly sent to the wrong email, the user is given the option to email the Application Email address (APP_EMAIL) to unsubscribe.</li>
+						<li> 2: The ability to add a biography in signup, edit the biography in the Profile section, and see other users' biographies in posts/users page. </li>
+					</ul>
 			</div>
 
 
@@ -67,7 +73,7 @@
 			</div>
 
 			<div id = "left">
-		    	<h2> <a id="signup_button" href='/users/signup/'> <img src="/images/signup_button.png" alt="Sign Up"></a></p> </h2>
+		    	<h2> <a id="signup_button" href='/users/signup/'> <img src="/images/signup_button.png" alt="Sign Up"></a></h2>
 			</div>
 
 

@@ -15,7 +15,6 @@ class posts_controller extends base_controller {
 
         # Setup view
         $this->template->content = View::instance('v_posts_add');
-        $this->template->title   = "New Post";
 
         # Render template
         echo $this->template;
@@ -32,43 +31,44 @@ class posts_controller extends base_controller {
         $_POST['modified'] = Time::now();
 
         # Insert
-        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
+        # Note I didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
         DB::instance(DB_NAME)->insert('posts', $_POST);
 
-        # Quick and dirty feedback
-        echo "Your post has been added. <a href='/posts/add'>Add another</a>";
+        $this->template->content = View::instance('v_posts_add_confirmation');
+
+        # Render template
+        echo $this->template;
 
     }
 
     public function index() {
 
-    # Set up the View
-    $this->template->content = View::instance('v_posts_index');
-    $this->template->title   = "All Posts";
+        # Set up the View
+        $this->template->content = View::instance('v_posts_index');
 
-    # Query
-    $q = 'SELECT 
-            posts.content,
-            posts.created,
-            posts.user_id AS post_user_id,
-            users_users.user_id AS follower_id,
-            users.first_name,
-            users.last_name
-        FROM posts
-        INNER JOIN users_users 
-            ON posts.user_id = users_users.user_id_followed
-        INNER JOIN users 
-            ON posts.user_id = users.user_id
-        WHERE users_users.user_id = '.$this->user->user_id;
+        # Query
+        $q = 'SELECT 
+                posts.content,
+                posts.created,
+                posts.user_id AS post_user_id,
+                users_users.user_id AS follower_id,
+                users.first_name,
+                users.last_name
+            FROM posts
+            INNER JOIN users_users 
+                ON posts.user_id = users_users.user_id_followed
+            INNER JOIN users 
+                ON posts.user_id = users.user_id
+            WHERE users_users.user_id = '.$this->user->user_id;
 
-    # Run the query, store the results in the variable $posts
-    $posts = DB::instance(DB_NAME)->select_rows($q);
+        # Stores the results in the variable $posts
+        $posts = DB::instance(DB_NAME)->select_rows($q);
 
-    # Pass data to the View
-    $this->template->content->posts = $posts;
+        # Pass data to the View
+        $this->template->content->posts = $posts;
 
-    # Render the View
-    echo $this->template;
+        # Render the View
+        echo $this->template;
 
     }
 
@@ -135,10 +135,5 @@ class posts_controller extends base_controller {
 
     }
 
-
-
 }
-
-
-
 ?>

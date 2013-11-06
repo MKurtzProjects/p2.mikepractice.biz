@@ -1,7 +1,9 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php if(isset($title)) echo $title; ?></title>
+	<title>Share Stuff</title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 	

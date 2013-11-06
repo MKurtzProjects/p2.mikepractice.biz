@@ -1,3 +1,5 @@
+<!-- View for adding posts -->
+
 <form id = "top" method='POST' action='/posts/p_add'>
 
     <label for='content'>New Post:</label><br>

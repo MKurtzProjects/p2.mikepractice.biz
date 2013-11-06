@@ -1,3 +1,4 @@
+<!-- view for following users -->
 
 <!DOCTYPE html>
 <html>
@@ -16,6 +17,7 @@
         </br>
     </div>
 
+<!-- Shows each user's first name, last name, and biography.  Allows one to follow or unfollow.  Followed users's posts will appear in the posts/index page -->
 
     <?php foreach($users as $user): ?>
         <div id = "top">

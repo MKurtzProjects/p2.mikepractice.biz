@@ -1,3 +1,5 @@
+<!-- Profile page displays the current biography and gives the option to update the profile.  Uses p_profile controller in c_users -->
+
 
 <div id="top">
 	<h1>My Profile:</h1>
@@ -14,7 +16,8 @@
 	    </textarea>
 	    <br><br>
 
-		<input type='submit' value='Edit '>
+		<input type='submit' value='Update'>
 
 	</form>
 </div>
+
