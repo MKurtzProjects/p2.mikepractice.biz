@@ -73,7 +73,8 @@
 			</div>
 
 			<div id = "left">
-		    	<h2> <a id="signup_button" href='/users/signup/'> <img src="/images/signup_button.png" alt="Sign Up"></a></h2>
+		    	<h2> Not yet a member? That can change. </h2> <br>
+		    		<h3><a id="signup_button" href='/users/signup/'> <img src="/images/signup_button.png" alt="Sign Up"></a></h3>
 			</div>
 
 

@@ -2,7 +2,7 @@
 
 
 	<div id="top">
-		<h1> View posts by your followers. </h1> <h3>No followers yet?  <a href='/posts/users'>Add some</a>! </h3> 
+		<h1> View posts by your followers. </h1> <h3>Not following anyone?  <a href='/posts/users'>Add people to follow</a>! </h3> 
 	</div>
 	
 <?php foreach($posts as $post): ?>
