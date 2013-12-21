@@ -8,13 +8,20 @@ class users_controller extends base_controller {
         parent::__construct();
     } 
 
-    public function signup() {
 
-        # Setup view
-            $this->template->content = View::instance('v_users_signup');
 
-        # Render template
-            echo $this->template;
+    public function signup($error = NULL) {
+
+        # Set up the view
+        $this->template->content = View::instance("v_users_signup");
+
+        # Pass data to the view
+        $this->template->content->error = $error;
+
+        # Render the view
+        echo $this->template;
+
+    
     }
 
     public function p_signup() {
@@ -25,18 +32,10 @@ class users_controller extends base_controller {
 
 
 
-        #Checking to make sure that there are no empty fields before the user can sign-up
-        #Looks to see if any of the fields are blank
-        if (empty($_POST["first_name"]) || empty($_POST["last_name"]) || empty($_POST["password"]) || empty($_POST["biography"]) || empty($_POST["last_name"])){
-
-            # If so, send them back to the signup page passing the error_blank parameter
-            Router::redirect("/users/signup/error_blank");
-        }
-
-        #Next, checks to see if there are more than 0 email dupes in the DB.
-         elseif ($dupecount > 0) {
+        #checks to see if there are more than 0 email dupes in the DB.
+         if ($dupecount > 0) {
             # If so, send them back to the signup page with the error_email_taken parameter
-            Router::redirect("/users/signup/error_email_taken");
+            Router::redirect("/users/signup/error");
             }
 
 
@@ -89,25 +88,6 @@ class users_controller extends base_controller {
             $email = Email::send($to, $from, $subject, $body, true, $cc, $bcc);
        }
         
-    }
-
-    public function p_profile() {
-
-        #Function to update the biography field in the users table so that users can update this field after initial signup.  
-        #This is editable in the Profile page.
-
-        $data = Array("biography" => $_POST['biography']);
-        DB::instance(DB_NAME)->update("users", $data, "WHERE token = '".$this->user->token."'");
-
-        # Set up the view
-        $this->template->content = View::instance("v_users_profile_updated");
-
-        # Pass data to the view
-        $this->template->content->error = $error;
-
-        # Render the view
-        echo $this->template;
-
     }
 
     public function login($error = NULL) {

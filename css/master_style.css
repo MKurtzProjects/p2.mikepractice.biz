@@ -1,53 +1,46 @@
 body {
 	font-family: Arial, sans-serif;
-	margin:0% 0%;
-	background-color:#7F2F7E
+
+	background-image:url('/chalkboard-black.jpg');
+	color:white;
+	margin: 0px 40px;
 }
 
-#head {
-	background-color: black;
-}
+.left {
 
-#top {
-	border:1px solid grey;
-	background-color:#FFF6FF;
-	margin:0% 3% 2% 3%;
-	padding: 1%;
-}
-
-#left {
-	border:1px solid grey;
 	width: 56%;
 	margin-left:3%;
 	padding: 1%;
-	background-color:#FFF6FF;
+	opacity:0.9;
 }
 
-#right {
+.right {
 	border:1px solid grey;
 	float:right;
 	clear:bottom;
-	width: 33%;
-	margin:0% 3%;
+	width: 50%;
+	margin: 3%;
 	padding: 1%;
 	background-color:#FFF6FF;
+	color: black;
 }
 
-footer {
-	clear:both;
+
+ul {
+	list-style-type: none;
 }
 
-#menu img {
+#mainmenu img {
 	float:left;
 }
 
-#menu li {
+.useractions {
 	font-size: large;
 	width:70px;
 	float:right;
 }
 
-#menu {
+#mainmenu {
 	margin-top: 0px;
 	height:80px;
 	padding-top: 10px;
@@ -55,15 +48,74 @@ footer {
 }
 
 
-#container {
-	margin: 20px;
+#mainmenu a:link {color:white;}
+#mainmenu a:visited {
+	color:white;
+list-style-type: none;}
+#mainmenu a:hover {color:yellow;} 
+
+#chapters {
+	display: inline-block;
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	list-style-type: none;
+	border: grey;
+	background-color:#4C804C;
+	width: 100%;
+	font-size: 15px;
+	padding: 3px;
 }
 
-.error {
-	color:red;
+#chapters li {
+	display:inline;
+	margin:30px;
 }
 
-#menu a:link {color:white;}
-#menu a:visited {color:white;}
-#menu a:hover {color:green;} 
+
+#problem {
+	border: 1px solid grey;
+	padding: 3%;
+	position: relative;
+	bottom: 30px;
+	margin: 0% 0% 0% 35%;
+	background-color: white;
 }
+
+#check, #answer_input  {
+	display:none;
+}
+
+#equation {
+	font-size: 12px;
+}
+
+
+input {
+	display: inline-block;
+}
+
+
+.menu {
+	font-size: small;
+	margin:0;
+	padding:0;
+	position: relative;
+	margin: 1%;
+	float:left;
+}
+
+a:link {
+	color:white;
+	text-decoration: none;
+	}      /* unvisited link */
+
+a:visited {
+	color:white;
+	text-decoration: none;
+	}      /* unvisited link */
+
+.accordian div {
+	width:200px;
+}
+

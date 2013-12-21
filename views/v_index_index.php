@@ -1,45 +1,36 @@
+
+
 <!DOCTYPE html>
 <html>
 	<head>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />   
 	    
-	    <!-- CSS for the Followers section -->
-	    <link rel="stylesheet" href="/css/index_style.css" type="text/css"> 
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.js"></script>
 	</head>
 
 	<body>
 
-		<div id = "top">
-			<h1> <?=APP_NAME?> </h1>
-			<h3> A site for stuff worth sharing. </h3>
-		</div>
-
 		<?php if ($user): ?>
 			
-			<div id="right">
+			<div class="right">
 
 				<ul id="action_list">
-					<li> <a href='/posts/add'>Add a new post</a> <br>Add posts for your followers to read.</li> 
-					<li> <a href='/posts/users'>Follow users</a> <br>Follow new users to subscribe to their feed.</li> 
-					<li> <a href='/posts/index'>View posts</a> <br>View a list of all posts by those you follow.</li> 
+					<h2>Math is fun!</h2>
+					<p>It's great to see you again, <?php echo $user->first_name; ?>.</p>
+					<p>How's your studying going?  Remember, you can use the menu above to select the virtual 'chapter' that you're looking to study.</p>
 				</ul>
 
 
 			</div>
 
-			<div id="left">
-				<h1> Welcome, <?php echo $user->first_name; ?>!</h1>
-				<p> So you've found Share Stuff.  Congratulations! </p>
-				<p> You'll find two +1 features on this site.  Those are: <p>
-					<ul>
-						<li> 1: An email confirmation after signup. If the email was mistakenly sent to the wrong email, the user is given the option to email the Application Email address (APP_EMAIL) to unsubscribe.</li>
-						<li> 2: The ability to add a biography in signup, edit the biography in the Profile section, and see other users' biographies in posts/users page. </li>
-					</ul>
+			<div class="left">
+				<h1> Welcome back, <?php echo $user->first_name; ?>!</h1>
 			</div>
 
 
 		<?php else: ?>
-			<div id = "right">
+			<div class = "right">
 				<h2> Sign In </h2>
 				
 
@@ -72,9 +63,11 @@
 
 			</div>
 
-			<div id = "left">
-		    	<h2> Not yet a member? That can change. </h2> <br>
-		    		<h3><a id="signup_button" href='/users/signup/'> <img src="/images/signup_button.png" alt="Sign Up"></a></h3>
+			<div class = "left">
+		    	<h2> Hone your math skills </h2>
+		    	<h2> Try the same problem over and over and over </h2>
+		    	<h2> Track your progress </h2>
+		    	
 			</div>
 
 

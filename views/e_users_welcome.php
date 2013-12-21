@@ -1,4 +1,4 @@
-<h1> Welcome to ShareStuff, <?php echo $_POST["first_name"]; ?>! </h1>
+<h1> Welcome to the Ultimate Mathbook, <?php echo $_POST["first_name"]; ?>! </h1>
 
 <p> This is your email confirmation. You are now signed up. </p>
 
